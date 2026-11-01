@@ -1,9 +1,8 @@
 # Fern-RTLTCP
 
 An rtl_tcp input module for [FernSDR](https://github.com/Steven9101/FernSDR):
-listen to an RTL-SDR, or any SDR exposed through an `rtl_tcp`-compatible
-server, local or over a tunnel, with a read-only mode for OpenWebRX
-`rtltcp_compat` feeds.
+listen to any device exposed through an `rtl_tcp`-compatible server, local or
+over a tunnel, or a read-only feed the server has already tuned.
 
 SPDX-License-Identifier: GPL-2.0-or-later
 
@@ -14,8 +13,8 @@ SPDX-License-Identifier: GPL-2.0-or-later
 - `control = true` (default): sends tuning commands — sample rate, centre,
   gain, ppm and bias tee — on `open`, and applies live `gain`/`ppm`/`bias_tee`
   on `set`.
-- `control = false`: sends nothing, for read-only feeds such as OpenWebRX
-  `rtltcp_compat`, where the centre and rate are fixed by the owner.
+- `control = false`: sends nothing, for a read-only feed where the server
+  fixes the centre and rate.
 - Reconnects for up to 30 seconds when the stream drops.
 
 ## Settings

@@ -62,7 +62,7 @@ $(PACKAGE): build/static-$(ARCH)/rtltcp $(DESCRIBE_BIN) tools/mkfernmod.py tools
 		--describe-with $(DESCRIBE_BIN) --platform linux-$(ARCH) --version $(VERSION) \
 		--license GPL-2.0-or-later \
 		--source https://github.com/vlig-alt/Fern-RTLTCP \
-		--description "An rtl_tcp network source, including read-only OpenWebRX rtltcp_compat feeds" \
+		--description "An rtl_tcp network source: any device behind an rtl_tcp-compatible server, with a read-only mode for already-tuned streams" \
 		--output $@
 	python3 tools/check_fernmod.py $@
 

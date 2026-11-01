@@ -1,5 +1,5 @@
 // rtltcp input module for FernSDR: a network RTL-SDR source over the rtl_tcp
-// protocol, with an optional read-only mode for OpenWebRX rtltcp_compat feeds.
+// protocol, with an optional read-only mode for feeds the server has already tuned.
 // SPDX-License-Identifier: GPL-2.0-or-later
 //
 // Contract: docs/MODULES.md in FernSDR, API 1 (input). One module process
@@ -306,7 +306,7 @@ json::Value describe() {
     {
         json::Value s = setting_def("control", "boolean", "Send tuning commands");
         s.set("default", json::Value::make_bool(true));
-        s.set("help", json::Value::make_string("off for read-only feeds such as OpenWebRX rtltcp_compat"));
+        s.set("help", json::Value::make_string("off for read-only feeds (an already-tuned stream)"));
         settings.push(std::move(s));
     }
     d.set("settings", std::move(settings));
