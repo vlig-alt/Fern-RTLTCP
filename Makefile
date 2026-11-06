@@ -38,7 +38,7 @@ HDRS := src/json.h
 # whatever ARCH is being packaged.
 DESCRIBE_BIN := build/static-$(HOST_ARCH)/rtltcp
 
-.PHONY: all static package test clean
+.PHONY: all static package test clean print-version
 
 all: build/rtltcp
 
@@ -68,6 +68,9 @@ $(PACKAGE): build/static-$(ARCH)/rtltcp $(DESCRIBE_BIN) tools/mkfernmod.py tools
 
 test: build/rtltcp
 	python3 tests/fake_rtltcp_test.py build/rtltcp
+
+print-version:
+	@echo $(VERSION)
 
 clean:
 	rm -rf build dist
